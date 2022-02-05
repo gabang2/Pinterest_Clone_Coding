@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
-from django.views.generic import CreateView
+from django.views.generic import CreateView, DetailView
 
 from accountapp.models import HelloWorld
 
@@ -27,5 +27,10 @@ def hello_world(request):
 class AccountCreateView(CreateView):
     model = User
     form_class = UserCreationForm #기본적인 userform을 제공해준다.
-    success_url = reverse_lazy('accountapp:hello_world') #reverse는 함수형, reverse_lazy는 class에서 사욯한다.
+    success_url = reverse_lazy('accountapp:login') #reverse는 함수형, reverse_lazy는 class에서 사욯한다.
     template_name = 'accountapp/create.html'
+
+class AccountDetailView(DetailView):
+    model = User
+    context_object_name = 'target_user'
+    template_name = 'accountapp/detail.html'
