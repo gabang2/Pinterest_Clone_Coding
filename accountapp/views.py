@@ -1,32 +1,34 @@
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponseForbidden
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
+from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
+from accountapp.decorators import account_ownership_required
 from accountapp.forms import AccountUpdateForm
 from accountapp.models import HelloWorld
 
+has_ownership = [account_ownership_required, login_required]
 
+
+@login_required
 def hello_world(request):
-    if request.user.is_authenticated:
-        if request.method == "POST":
+    if request.method == "POST":
 
-            temp = request.POST.get('hello_world_input')
+        temp = request.POST.get('hello_world_input')
 
-            NewHelloWorld = HelloWorld()
-            NewHelloWorld.text = temp
-            NewHelloWorld.save()
+        NewHelloWorld = HelloWorld()
+        NewHelloWorld.text = temp
+        NewHelloWorld.save()
 
-            HelloWorld_list = HelloWorld.objects.all
+        HelloWorld_list = HelloWorld.objects.all
 
-            return HttpResponseRedirect(reverse('accountapp:hello_world'))
-
-        else:
-            HelloWorld_list = HelloWorld.objects.all
-            return render(request, 'accountapp/hello_world.html', context={'hello_world_input': HelloWorld_list})
+        return HttpResponseRedirect(reverse('accountapp:hello_world'))
     else:
-        return HttpResponseRedirect(reverse('accountapp:login'))
+        HelloWorld_list = HelloWorld.objects.all
+        return render(request, 'accountapp/hello_world.html', context={'hello_world_input': HelloWorld_list})
 
 
 class AccountCreateView(CreateView):
