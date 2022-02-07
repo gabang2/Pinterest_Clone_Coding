@@ -27,7 +27,8 @@ class ProfileCreateView(CreateView):
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse('accountapp:detail', kwargs={'pk': self.object.user.pk})  # self.object는 user임.
+        return reverse('accountapp:detail', kwargs={'pk': self.object.user.pk})
+        # self.object는 user임.
 
 
 @method_decorator(profile_ownership_required, 'get')
