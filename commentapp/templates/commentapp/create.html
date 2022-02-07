@@ -1,0 +1,18 @@
+{% load bootstrap4 %}
+
+<div style="text-align: center; max-width: 500px; margin: 4rem auto">
+
+    <h2> Comment Create </h2>
+    <form action="{% url 'commentapp:create' %}" method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <input type="hidden" name="article_pk" value="{{ article.pk }}">
+        {% if user.is_authenticated %}
+            <input type="submit" class="btn btn-primary">
+        {% else %}
+            <a href="{% url 'accountapp:login' %}?next={{ request.path }}"></a>
+        {% endif %}
+
+    </form>
+
+</div>
