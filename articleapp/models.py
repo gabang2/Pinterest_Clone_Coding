@@ -12,4 +12,4 @@ class Article(models.Model):
     content = models.TextField(null=True)
     image = models.ImageField(upload_to='article/', null=False)
 
-    created_at = models.DateField(auto_now_add=True, null=True)
+    created_at = models.DateField(auto_now=True, null=True)
