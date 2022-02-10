@@ -4,7 +4,7 @@
 
 {%  block content %}
 
-    <div style="text-align: center; max-width:500px; margin: 4rem auto ">
+    <div style="text-align: center; max-width:700px; margin: 4rem auto ">
         <p>
             {{ target_user.date_joined }}
         </p>
@@ -12,35 +12,27 @@
     {% if target_user.profile %}
         <img src="{{ target_user.profile.image.url }}" alt="" style="height: 12rem;width: 12rem;border-radius: 20rem; margin-bottom: 2rem
         ;">
-        <h2> {{ target_user.profile.nickname }}</h2>
-        <h5 style="margin-bottom: 3rem"> {{ target_user.profile.message }}</h5>
-        <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}">edit profile</a>
+        <h2> {{ target_user.profile.nickname }}({{ target_user.username }})</h2>
+        <h5 style="margin-bottom: 1rem"> {{ target_user.profile.message }}</h5>
+        <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}" class="btn btn-dark" style="display: inline-block">edit profile</a>
 
     {% else %}
-    <a href="{% url 'profileapp:create' %}">
+    <a href="{% url 'profileapp:create' %}" class="btn btn-dark" style="display: inline-block">
         make profile
     </a>
     {% endif %}
-        <h2>
-            {{ target_user.username }}
-        </h2>
+
     {% if target_user == user %}
-        <div>
-            <a href="{% url 'accountapp:update' pk=user.pk %}">
+            <a href="{% url 'accountapp:update' pk=user.pk %}" class="btn btn-dark" style="display: inline-block">
                 <span> Change Information </span>
             </a>
-        </div>
-        <div>
-            <a href="{% url 'accountapp:delete' pk=user.pk %}">
+            <a href="{% url 'accountapp:delete' pk=user.pk %}" class="btn btn-dark" style="display: inline-block">
                 <span> Delete Account </span>
             </a>
-        </div>
 
     {% endif %}
-    <div style="text-align: center">
-        {% include 'snippets/project_article_list.html' with article_list=object_list %}
-    </div>
-
+    <hr>
+    {% include 'snippets/article_list.html' with article_list=object_list %}
     </div>
 
 {%  endblock %}

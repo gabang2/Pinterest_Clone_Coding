@@ -11,6 +11,7 @@ from django.views.generic.list import MultipleObjectMixin
 from articleapp.models import Article
 from projectapp.forms import ProjectCreationForm
 from projectapp.models import Project
+from subscribeapp.models import Subscription
 
 
 @method_decorator(login_required, 'post')
@@ -31,9 +32,16 @@ class ProjectDetailView(DetailView, MultipleObjectMixin):
     template_name = 'projectapp/detail.html'
 
     def get_context_data(self, **kwargs):
-        # object_list에 Aritlcle중에서 필터링한다. 무엇을? 현재(self) object의 값이 project의 값과 같은 것을!
+        project = self.object
+        user = self.request.user
+
+        if user.is_authenticated:
+            subscription = Subscription.objects.filter(user=user, project=project)
+
         object_list = Article.objects.filter(project=self.get_object())
-        return super(ProjectDetailView, self).get_context_data(object_list=object_list, **kwargs)
+        return super(ProjectDetailView, self).get_context_data(object_list=object_list, subscription=subscription,
+                                                               **kwargs)
+
 
 class ProjectListView(ListView, FormMixin):
     model = Project

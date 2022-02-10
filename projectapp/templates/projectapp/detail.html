@@ -3,21 +3,24 @@
 
 {% block content %}
 
-    <div style="text-align: center;">
 
-        <div style=" margin-bottom: 2rem">
+    <div style="text-align: center; display: block">
         <img src="{{ target_project.image.url }}" alt="" style="width: 20rem; border-radius: 20rem">
-        </div>
+        <p><strong>{{ target_project.title }}</strong></p>
+        <p>{{ target_project.detail }}</p>
 
-        <div style="">
-            <p><strong>{{ target_project.title }}</strong></p>
-            <p>{{ target_project.detail }}</p>
-        </div>
+        {% if user.is_authenticated %}
+            {% if not subscription %}
+                <a href="{% url 'subscribeapp:subscription' %}?project_pk={{ target_project.pk }}" class="btn btn-primary rounded-pill">Subscribe</a>
+            {% else %}
+                <a href="{% url 'subscribeapp:subscription' %}?project_pk={{ target_project.pk }}" class="btn btn-dark rounded-pill">Unsubscribe</a>
+            {% endif %}
+        {% endif %}
 
     </div>
 
     <div>
-        {% include 'snippets/project_article_list.html' with article_list=object_list %}
+        {% include 'snippets/article_list.html' with article_list=object_list %}
     </div>
 
 {% endblock %}

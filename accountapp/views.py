@@ -46,6 +46,8 @@ class AccountDetailView(DetailView, MultipleObjectMixin):
     context_object_name = 'target_user'
     template_name = 'accountapp/detail.html'
 
+    paginate_by = 5
+
     def get(self, *args, **kwargs):
         if self.request.user.is_authenticated and self.get_object() == self.request.user:
             return super().get(*args, **kwargs)
