@@ -12,9 +12,10 @@
     {% if target_user.profile %}
         <img src="{{ target_user.profile.image.url }}" alt="" style="height: 12rem;width: 12rem;border-radius: 20rem; margin-bottom: 2rem
         ;">
-        <h2> {{ target_user.profile.nickname }}({{ target_user.username }})</h2>
+        <span style="display: block"> {{ target_user.profile.nickname }}({{ target_user.username }})</span>
+        <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}" class="material-icons" style="display: inline-block; box-shadow: 0 0 4px #ccc; border-radius: 10rem; padding: .4rem">edit</a>
         <h5 style="margin-bottom: 1rem"> {{ target_user.profile.message }}</h5>
-        <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}" class="btn btn-dark" style="display: inline-block">edit profile</a>
+
 
     {% else %}
     <a href="{% url 'profileapp:create' %}" class="btn btn-dark" style="display: inline-block">
@@ -23,11 +24,13 @@
     {% endif %}
 
     {% if target_user == user %}
-            <a href="{% url 'accountapp:update' pk=user.pk %}" class="btn btn-dark" style="display: inline-block">
-                <span> Change Information </span>
+            <a href="{% url 'accountapp:update' pk=user.pk %}"
+            class="material-icons" style="display: inline-block; box-shadow: 0 0 4px #ccc; border-radius: 10rem; padding: .4rem">
+                <span> settings </span>
             </a>
-            <a href="{% url 'accountapp:delete' pk=user.pk %}" class="btn btn-dark" style="display: inline-block">
-                <span> Delete Account </span>
+            <a href="{% url 'accountapp:delete' pk=user.pk %}"
+            class="material-icons" style="display: inline-block; box-shadow: 0 0 4px #fcc; border-radius: 10rem; padding: .4rem">
+                <span> cancel </span>
             </a>
 
     {% endif %}

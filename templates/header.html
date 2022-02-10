@@ -1,6 +1,6 @@
 <div style="text-align: center; margin: 2rem 0;">
     <div>
-        <a href="{% url 'accountapp:hello_world' %}">
+        <a href="{% url 'articleapp:list' %}">
             <h1 class="rabbit_logo">rabbit</h1>
         </a>
     </div>
@@ -22,7 +22,7 @@
             <span> SignUp </span>
         </a>
         {% else %}
-        <a href="{% url 'accountapp:logout' %}?next={% url 'accountapp:hello_world' %}" class="rabbit_header_nav">
+        <a href="{% url 'accountapp:logout' %}?next={% url 'articleapp:list' %}" class="rabbit_header_nav">
             <span> logout </span>
         </a>
         <a href="{% url 'accountapp:detail' pk=user.pk %}" class="rabbit_header_nav">
