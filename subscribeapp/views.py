@@ -34,6 +34,8 @@ class SubscriptionListView(ListView):
     paginate_by = 5
 
     def get_queryset(self):
+        # values_list('project')를 통해서 user의 구독 프로젝트('project') 정보를 리스트로 저장(projects)에
         projects = Subscription.objects.filter(user=self.request.user).values_list('project')
+        # Article모델에서 project속성이 projects리스트에 있는 것들만 article_list에 저장.
         article_list = Article.objects.filter(project__in=projects)
         return article_list
