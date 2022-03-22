@@ -2,6 +2,8 @@ FROM python:3.9.0
 
 WORKDIR /home/
 
+RUN echo "test"
+
 RUN git clone https://github.com/gabang2/Pinterest_Clone_Coding.git
 
 WORKDIR /home/Pinterest_Clone_Coding/
