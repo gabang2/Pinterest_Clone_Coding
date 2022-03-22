@@ -2,12 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac219c3d-7e00-4e83-ab99-40ba4216f4ff" name="Changes" comment="ddd">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rabbit/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/rabbit/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -35,7 +41,14 @@
       <option name="presentableId" value="Default" />
       <updated>1646823300276</updated>
       <workItem from="1646823302109" duration="2172000" />
-      <workItem from="1646837618085" duration="326000" />
+      <workItem from="1646837618085" duration="578000" />
+      <workItem from="1647074790756" duration="9085000" />
+      <workItem from="1647159202439" duration="685000" />
+      <workItem from="1647259545456" duration="1460000" />
+      <workItem from="1647836139623" duration="1159000" />
+      <workItem from="1647948273683" duration="50000" />
+      <workItem from="1647948773394" duration="2377000" />
+      <workItem from="1647954681188" duration="7791000" />
     </task>
     <task id="LOCAL-00001" summary="ddd">
       <created>1646837816629</created>
