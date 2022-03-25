@@ -16,4 +16,4 @@ RUN python manage.py migrate
 
 EXPOSE 8000
 
-CMD ["gunicorn", "Pinterest_Clone_Coding.wsgi", "--bind", "0.0.0.0:8000"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "rabbit.wsgi:application"]
