@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac219c3d-7e00-4e83-ab99-40ba4216f4ff" name="Changes" comment="ddd">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +47,7 @@
       <workItem from="1647948773394" duration="2377000" />
       <workItem from="1647954681188" duration="7791000" />
       <workItem from="1648017053032" duration="15000" />
-      <workItem from="1648190142079" duration="11696000" />
+      <workItem from="1648190142079" duration="11952000" />
     </task>
     <task id="LOCAL-00001" summary="ddd">
       <created>1646837816629</created>
