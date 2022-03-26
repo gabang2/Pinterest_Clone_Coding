@@ -16,18 +16,7 @@ import os
 
 from django.urls import reverse_lazy
 
-env = environ.Env(
-    # set casting, default value
-    DEBUG=(bool, False)
-)
-# Base_dir은 최상위 rabbit을 뜻함.
-BASE_DIR = Path(__file__).resolve().parent.parent
-environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
-DEBUG = env('DEBUG')
-SECRET_KEY = env('SECRET_KEY')
-
-
-ALLOWED_HOSTS = ['*']
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 # Application definition
 
@@ -77,18 +66,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'rabbit.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
-
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
@@ -107,7 +84,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
@@ -119,12 +95,11 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/' #static파일에 직접 접근하기 위한 경로
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') #파일 저장 경로
+STATIC_URL = 'static/'  # static파일에 직접 접근하기 위한 경로
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # 파일 저장 경로
 STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
@@ -134,8 +109,8 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL=reverse_lazy('articleapp:list')
-LOGOUT_REDIRECT_URL=reverse_lazy('accountapp:login')
+LOGIN_REDIRECT_URL = reverse_lazy('articleapp:list')
+LOGOUT_REDIRECT_URL = reverse_lazy('accountapp:login')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
