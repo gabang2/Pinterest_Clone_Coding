@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac219c3d-7e00-4e83-ab99-40ba4216f4ff" name="Changes" comment="ddd">
-      <change afterPath="$PROJECT_DIR$/rabbit/settings/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rabbit/settings/deploy.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rabbit/settings/local.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rabbit/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/rabbit/settings/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/nginx.conf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +37,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="sqlite" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -68,6 +67,14 @@
       <workItem from="1647954681188" duration="7791000" />
       <workItem from="1648017053032" duration="15000" />
       <workItem from="1648190142079" duration="11952000" />
+      <workItem from="1648383351692" duration="3499000" />
+      <workItem from="1648475903977" duration="477000" />
+      <workItem from="1648621271984" duration="1155000" />
+      <workItem from="1648624028506" duration="2084000" />
+      <workItem from="1648703227032" duration="1248000" />
+      <workItem from="1648889766359" duration="1759000" />
+      <workItem from="1648949530508" duration="2752000" />
+      <workItem from="1648961611408" duration="972000" />
     </task>
     <task id="LOCAL-00001" summary="ddd">
       <created>1646837816629</created>
